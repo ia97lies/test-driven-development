@@ -1,0 +1,57 @@
+// apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+ext.jmeVersion = "3.3.0-stable" 
+mainClassName='mygame.Main'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+ 
+    // Testing stuff
+    testCompile "junit:junit:[4.12.0,)"
+    testCompile "org.mockito:mockito-core:2.+"
+    
+    // Need at least basic JME
+    compile "org.jmonkeyengine:jme3-core:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-networking:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-jogg:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-effects:$jmeVersion"
+ 
+    // Standard utility stuff
+    compile 'com.google.guava:guava:[19.0,)'
+    compile 'org.slf4j:slf4j-api:[1.7.+,)'
+    compile 'org.reflections:reflections:[0.9.11,)'
+    compile 'org.apache.commons:commons-lang3:[3.7,)'
+    runtime 'org.apache.logging.log4j:log4j-slf4j-impl:[2.11.+,)'
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+}
+
