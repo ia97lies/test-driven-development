@@ -97,16 +97,16 @@ public class Main extends SimpleApplication {
         public void onAction(String name, boolean keyPressed, float tpf) {
             if (name.equals(RIGHT) && !keyPressed) {
                 System.out.println("PLACE HOLDER: RIGHT");
-                player.setLocalTranslation(player.getLocalTranslation().add(new Vector3f(-1, 0, 0)));
+                player.move(new Vector3f(-1, 0, 0));
             } else if (name.equals(LEFT) && !keyPressed) {
                 System.out.println("PLACE HOLDER: LEFT");
-                player.setLocalTranslation(player.getLocalTranslation().add(new Vector3f(1, 0, 0)));
+                player.move(new Vector3f(1, 0, 0));
             } else if (name.equals(FORWARD) && !keyPressed) {
                 System.out.println("PLACE HOLDER: FORWARD");
-                player.setLocalTranslation(player.getLocalTranslation().add(new Vector3f(0, 0, 1)));
+                player.move(new Vector3f(0, 0, 1));
             } else if (name.equals(BACKWARD) && !keyPressed) {
                 System.out.println("PLACE HOLDER: BACKWARD");
-                player.setLocalTranslation(player.getLocalTranslation().add(new Vector3f(0, 0, -1)));
+                player.move(new Vector3f(0, 0, -1));
             }
         }
     };
