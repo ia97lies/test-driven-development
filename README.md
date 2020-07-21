@@ -26,23 +26,23 @@ The command has two methods an *execute()* and an *undo()*
 
 We store these commands into a history object. The **History** class does have *execute(Command command)*, *undo()*, and *redo()* methods.
 
-The history object contains a list of commands and the last executed command was **command2**
+The history object contains a list of commands and this example last executed command was **command2**
 ```
-command1 **command2**
+command1 *command2*
 ```
 
 To execute a command we simply call *history.execute(command)*, we store the command into a structure. In the example above we were initially on **command2** and move on to **command3**
 ```
-command1 command2 **command3**
+command1 command2 *command3*
 ```
 
 To undo the current command, we simply call *history.undo()* and move to the command before in our example on **command2**
 ```
-command1 **command2** command3
+command1 *command2* command3
 ```
 
 To redo a command we undid we simply move one command further and call again *command.execute()* in our example it is **command3**
 ```
-command1 command2 **command3**
+command1 command2 *command3*
 ```
 
