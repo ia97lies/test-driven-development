@@ -32,12 +32,12 @@ The history object contains a list of commands and in this example the last exec
 command1 *command2*
 ```
 
-To execute a command we simply call *history.execute(command)*, we store the command into a structure. We were initially on **command2** and move on to **command3**
+To execute a command we simply call *history.execute(command)* that then calls command.exectue() and store the command into a structure. We were initially on **command2** and move on to **command3**
 ```
 command1 command2 *command3*
 ```
 
-To undo the current command, we simply call *history.undo()* and move to the command before in our example on **command2**
+To undo the current command, we simply call *history.undo()* that calls then *command.undo()* of **command3** and move to the command before in our example to **command2**
 ```
 command1 *command2* command3
 ```
