@@ -12,7 +12,7 @@ We do 10' breaks between the blocks.
 ## Your Tasks
 Do the following steps before the workshop!
 
-* Import MoveIt_step0 in your IDE as a gradle project and build it.
+* Import MoveIt_step0 in your IDE as a gradle project and build it, Java 8 should be sufficient.
 * Run the application, you can move a square with WASD keys on the screen.
 * Make sure the dummy test is working!
 
